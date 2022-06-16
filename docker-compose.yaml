@@ -18,6 +18,7 @@ services:
       - staticfiles:/app/staticfiles/
   postgres_db:
     image: postgres
+    restart: always
     command: -p 5434
     env_file:
       - web/.env
@@ -31,12 +32,12 @@ services:
     image: redis
     restart: always
     expose:
-      - 6380
+      - 6388
     ports:
-      - "6380:6380"
+      - "6388:6388"
     volumes:
       - redis_data:/data
-    entrypoint: redis-server --appendonly yes --port 6380
+    entrypoint: redis-server --appendonly yes --port 6388
 
 volumes:
   staticfiles:
