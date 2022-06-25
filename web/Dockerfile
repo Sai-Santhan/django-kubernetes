@@ -1,4 +1,4 @@
-FROM python:3.10.1-slim
+FROM amd64/python:3.10-slim
 
 COPY . /app
 WORKDIR /app
