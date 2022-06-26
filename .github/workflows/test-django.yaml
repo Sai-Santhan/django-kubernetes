@@ -30,8 +30,6 @@ jobs:
           POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
         ports:
           - 5432:5432
-        volumes:
-          - ./web:/var/lib/postgresql/data
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
