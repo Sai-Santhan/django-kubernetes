@@ -1,16 +1,11 @@
-name: Django CI
+name: Django CI & Postgres Test
 
 on:
   workflow_call:
   workflow_dispatch:
 
-  push:
-    branches: ["master"]
-  pull_request:
-    branches: ["master"]
-
 jobs:
-  build:
+  django-test:
     runs-on: ubuntu-latest
     defaults:
       run:
