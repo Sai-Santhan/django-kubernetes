@@ -4,14 +4,15 @@ on:
   workflow_call:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
-  test_django:
-    uses: Sai-Santhan/django-kubernetes/.github/workflows/test-django.yaml@main
+  test_django_job:
+    uses: Sai-Santhan/django-kubernetes/.github/workflows/test-django.yaml@master
   docker_build:
     runs-on: ubuntu-latest
+    needs: [test_django_job]
     steps:
       - uses: actions/checkout@v3
