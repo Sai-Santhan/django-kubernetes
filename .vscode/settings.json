@@ -6,5 +6,8 @@
   "[python]": {
     "editor.formatOnPaste": false,
     "editor.formatOnSaveMode": "file"
+  },
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///Users/sai/projects/django-k8s/.github/workflows/build.yaml"
   }
 }
